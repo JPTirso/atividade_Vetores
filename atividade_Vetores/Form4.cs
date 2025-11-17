@@ -33,19 +33,37 @@ namespace atividade_Vetores
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (i < 30)
+            try
             {
-                Num[i] = Convert.ToDouble(txtNum.Text);
-                lstMatrizA.Items.Add(Num[i]);
-                i++;
-                txtNum.Clear();
-                txtNum.Focus();
+                if (i < 14)
+                {
+                    Num[i] = Convert.ToDouble(txtNum.Text);
+                    lstMatrizA.Items.Add(Num[i]);
+                    i++;
+                    lblContagem.Text = "Digite o " + (i + 1) + "º número:";
+                    txtNum.Clear();
+                    txtNum.Focus();
+                }
+                else if (i == 14)
+                {
+
+                    Num[i] = Convert.ToDouble(txtNum.Text);
+                    lstMatrizA.Items.Add(Num[i]);
+                    i++;
+                    txtNum.Clear();
+                    txtNum.Focus();
+                    lblContagem.Text = "Matriz cheia";
+                    btnAdd.Hide();
+                    btnExemplo.Hide();
+                    btnCalcular.Show();
+
+
+                }
             }
-            else
+            catch (Exception)
             {
-                MessageBox.Show("Matriz cheia!");
-                btnAdd.Hide();
-                btnCalcular.Show();
+                MessageBox.Show("Digite um número válido!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtNum.Focus();
             }
         }
 
@@ -54,10 +72,14 @@ namespace atividade_Vetores
             txtNum.Clear();
             lstMatrizA.Items.Clear();
             lstMatrizB.Items.Clear();
+            txtPesquisa.Clear();
             Array.Clear(Num, 0, Num.Length);
+            Array.Clear(Cubo, 0, Cubo.Length);
             btnAdd.Show();
+            btnExemplo.Show();
             btnCalcular.Hide();
             i = 0;
+            lblContagem.Text = "Digite o " + (i + 1) + "º número:";
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
@@ -65,6 +87,48 @@ namespace atividade_Vetores
             Hide();
             FrmMenu menu = new FrmMenu();
             menu.Show();
+        }
+
+        private void txtPesquisa_TextChanged(object sender, EventArgs e)
+        {
+            string pesquisa;
+            pesquisa = txtPesquisa.Text.Trim();
+            lstMatrizB.Items.Clear();
+
+            if (pesquisa == "")
+            {
+                for (int j = 0; j < 30; j++)
+                {
+                    lstMatrizB.Items.Add(Cubo[j]);
+                }
+                return;
+            }
+
+            for (int j = 0; j < 30; j++)
+            {
+                if (Cubo[j].ToString().Contains(pesquisa))
+                {
+                    lstMatrizB.Items.Add(Cubo[j]);
+                }
+            }
+        }
+
+        private void btnExemplo_Click(object sender, EventArgs e)
+        {
+            txtNum.Clear();
+            lstMatrizA.Items.Clear();
+            lstMatrizB.Items.Clear();
+            Array.Clear(Num, 0, Num.Length);
+            Array.Clear(Cubo, 0, Cubo.Length);
+            for (i = 0; i < 30; i++)
+            {
+                Num[i] = i + 1;
+                lstMatrizA.Items.Add(Num[i]);
+            }
+            lblContagem.Text = "Matriz cheia";
+            btnAdd.Hide();
+            btnCalcular.Show();
+            btnExemplo.Hide();
         }
     }
 }

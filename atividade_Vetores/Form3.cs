@@ -16,42 +16,67 @@ namespace atividade_Vetores
         {
             InitializeComponent();
         }
-
+        Double[] Troca = new Double[10];
         Double[] Num = new Double[10];
         int i = 0;
 
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (i < 10)
+            try
             {
-                Num[i] = Convert.ToDouble(txtNum.Text);
-                if (Num[i] >= 0)
+                if (i < 9)
                 {
-                    lstMatrizA.Items.Add(Num[i]);
-                    i++;
-                    txtNum.Clear();
-                    txtNum.Focus();
-                }
-                else
-                {
-                    MessageBox.Show("Número Negativo! Digite um número positivo.");
-                    txtNum.Clear();
-                    txtNum.Focus();
-                }
+                    Num[i] = Convert.ToDouble(txtNum.Text);
+                    if (Num[i] >= 0)
+                    {
+                        lstMatrizA.Items.Add(Num[i]);
+                        i++;
+                        txtNum.Clear();
+                        txtNum.Focus();
+                        lblContagem.Text = "Digite o " + (i + 1) + "º número:";
+                    }
+                    else
+                    {
+                        MessageBox.Show("Número Negativo! Digite um número positivo.");
+                        txtNum.Clear();
+                        txtNum.Focus();
+                    }
 
+                }
+                else if (i == 9)
+                {
+
+                    Num[i] = Convert.ToDouble(txtNum.Text);
+                    if (Num[i] >= 0)
+                    {
+                        lstMatrizA.Items.Add(Num[i]);
+                        i++;
+                        lblContagem.Text = "Matriz cheia";
+                        txtNum.Clear();
+                        txtNum.Focus();
+                        btnAdd.Hide();
+                        btnExemplo.Hide();
+                        btnCalcular.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Número Negativo! Digite um número positivo.");
+                        txtNum.Clear();
+                        txtNum.Focus();
+                    }
+                }
             }
-            else
+            catch (Exception)
             {
-                MessageBox.Show("Matriz cheia!");
-                btnAdd.Hide();
-                btnCalcular.Show();
+                MessageBox.Show("Digite um número válido!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtNum.Focus();
             }
+            
         }
 
         private void btnCalcular_Click(object sender, EventArgs e)
         {
-            Double[] Troca = new Double[10];
             for (i = 0; i < 10; i++)
             {
                 Troca[i] = Num[i] - 2 * Num[i];
@@ -65,9 +90,12 @@ namespace atividade_Vetores
             lstMatrizA.Items.Clear();
             lstMatrizB.Items.Clear();
             Array.Clear(Num, 0, Num.Length);
+            Array.Clear(Troca, 0, Troca.Length);
             btnAdd.Show();
+            btnExemplo.Show();
             btnCalcular.Hide();
             i = 0;
+            lblContagem.Text = "Digite o " + (i + 1) + "º número:";
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
@@ -75,6 +103,24 @@ namespace atividade_Vetores
             Hide();
             FrmMenu menu = new FrmMenu();
             menu.Show();
+        }
+
+        private void btnExemplo_Click(object sender, EventArgs e)
+        {
+            txtNum.Clear();
+            lstMatrizA.Items.Clear();
+            lstMatrizB.Items.Clear();
+            Array.Clear(Num, 0, Num.Length);
+            Array.Clear(Troca, 0, Troca.Length);
+            for (i = 0; i < 10; i++)
+            {
+                Num[i] = i + 1;
+                lstMatrizA.Items.Add(Num[i]);
+            }
+            lblContagem.Text = "Matriz cheia";
+            btnAdd.Hide();
+            btnCalcular.Show();
+            btnExemplo.Hide();
         }
     }
 }

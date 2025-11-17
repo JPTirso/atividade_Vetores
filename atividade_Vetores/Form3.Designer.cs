@@ -37,9 +37,11 @@
             label1 = new Label();
             label2 = new Label();
             groupBox2 = new GroupBox();
+            btnExemplo = new Button();
             btnCalcular = new Button();
             btnAdd = new Button();
             groupBox1 = new GroupBox();
+            lblContagem = new Label();
             lblNum = new Label();
             txtNum = new TextBox();
             groupBox4.SuspendLayout();
@@ -136,6 +138,7 @@
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(btnExemplo);
             groupBox2.Controls.Add(btnCalcular);
             groupBox2.Controls.Add(btnAdd);
             groupBox2.Location = new Point(14, 316);
@@ -146,6 +149,16 @@
             groupBox2.TabIndex = 61;
             groupBox2.TabStop = false;
             groupBox2.Text = "Botões Calcular";
+            // 
+            // btnExemplo
+            // 
+            btnExemplo.Location = new Point(360, 85);
+            btnExemplo.Name = "btnExemplo";
+            btnExemplo.Size = new Size(77, 37);
+            btnExemplo.TabIndex = 64;
+            btnExemplo.Text = "Exemplo";
+            btnExemplo.UseVisualStyleBackColor = true;
+            btnExemplo.Click += btnExemplo_Click;
             // 
             // btnCalcular
             // 
@@ -170,6 +183,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(lblContagem);
             groupBox1.Controls.Add(lblNum);
             groupBox1.Controls.Add(txtNum);
             groupBox1.Location = new Point(14, 16);
@@ -180,6 +194,16 @@
             groupBox1.TabIndex = 60;
             groupBox1.TabStop = false;
             groupBox1.Text = "Informações";
+            // 
+            // lblContagem
+            // 
+            lblContagem.AutoSize = true;
+            lblContagem.Font = new Font("Segoe UI", 12F);
+            lblContagem.Location = new Point(12, 95);
+            lblContagem.Name = "lblContagem";
+            lblContagem.Size = new Size(184, 28);
+            lblContagem.TabIndex = 41;
+            lblContagem.Text = "Digite o 1º numero:";
             // 
             // lblNum
             // 
@@ -195,7 +219,7 @@
             // 
             txtNum.CausesValidation = false;
             txtNum.Font = new Font("Segoe UI", 12F);
-            txtNum.Location = new Point(122, 80);
+            txtNum.Location = new Point(248, 95);
             txtNum.Name = "txtNum";
             txtNum.Size = new Size(183, 34);
             txtNum.TabIndex = 35;
@@ -236,5 +260,7 @@
         private GroupBox groupBox1;
         private Label lblNum;
         private TextBox txtNum;
+        private Button btnExemplo;
+        private Label lblContagem;
     }
 }
