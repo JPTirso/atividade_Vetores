@@ -73,6 +73,7 @@
             btnLimpar.TabIndex = 43;
             btnLimpar.Text = "Limpar";
             btnLimpar.UseVisualStyleBackColor = true;
+            btnLimpar.Click += btnLimpar_Click;
             // 
             // btnVoltar
             // 
@@ -83,6 +84,7 @@
             btnVoltar.TabIndex = 44;
             btnVoltar.Text = "Voltar";
             btnVoltar.UseVisualStyleBackColor = true;
+            btnVoltar.Click += btnVoltar_Click;
             // 
             // groupBox3
             // 
@@ -180,13 +182,14 @@
             // 
             // btnCalcular
             // 
-            btnCalcular.Location = new Point(151, 40);
+            btnCalcular.Location = new Point(25, 41);
             btnCalcular.Name = "btnCalcular";
             btnCalcular.Size = new Size(120, 59);
             btnCalcular.TabIndex = 61;
             btnCalcular.Text = "Calcular";
             btnCalcular.UseVisualStyleBackColor = true;
             btnCalcular.Visible = false;
+            btnCalcular.Click += btnCalcular_Click;
             // 
             // btnAdd
             // 
@@ -196,6 +199,7 @@
             btnAdd.TabIndex = 60;
             btnAdd.Text = "Adicionar";
             btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
             // 
             // groupBox1
             // 
