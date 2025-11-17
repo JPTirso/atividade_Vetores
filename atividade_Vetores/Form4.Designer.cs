@@ -32,19 +32,19 @@
             btnLimpar = new Button();
             btnVoltar = new Button();
             groupBox3 = new GroupBox();
+            label3 = new Label();
+            txtPesquisa = new TextBox();
             lstMatrizB = new ListBox();
             lstMatrizA = new ListBox();
             label1 = new Label();
             label2 = new Label();
             groupBox2 = new GroupBox();
+            btnPesquisar = new Button();
             btnCalcular = new Button();
             btnAdd = new Button();
             groupBox1 = new GroupBox();
             lblNum = new Label();
-            txtComodo = new TextBox();
-            txtPesquisa = new TextBox();
-            label3 = new Label();
-            btnPesquisar = new Button();
+            txtNum = new TextBox();
             groupBox4.SuspendLayout();
             groupBox3.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -101,6 +101,23 @@
             groupBox3.TabStop = false;
             groupBox3.Text = "Áreas";
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 12F);
+            label3.Location = new Point(2, 254);
+            label3.Name = "label3";
+            label3.Size = new Size(169, 28);
+            label3.TabIndex = 41;
+            label3.Text = "Barra de pesquisa:";
+            // 
+            // txtPesquisa
+            // 
+            txtPesquisa.Location = new Point(173, 258);
+            txtPesquisa.Name = "txtPesquisa";
+            txtPesquisa.Size = new Size(150, 27);
+            txtPesquisa.TabIndex = 64;
+            // 
             // lstMatrizB
             // 
             lstMatrizB.FormattingEnabled = true;
@@ -151,6 +168,16 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Botões Calcular";
             // 
+            // btnPesquisar
+            // 
+            btnPesquisar.Location = new Point(311, 40);
+            btnPesquisar.Margin = new Padding(3, 4, 3, 4);
+            btnPesquisar.Name = "btnPesquisar";
+            btnPesquisar.Size = new Size(120, 59);
+            btnPesquisar.TabIndex = 62;
+            btnPesquisar.Text = "Pesquisar";
+            btnPesquisar.UseVisualStyleBackColor = true;
+            // 
             // btnCalcular
             // 
             btnCalcular.Location = new Point(151, 40);
@@ -173,7 +200,7 @@
             // groupBox1
             // 
             groupBox1.Controls.Add(lblNum);
-            groupBox1.Controls.Add(txtComodo);
+            groupBox1.Controls.Add(txtNum);
             groupBox1.Location = new Point(14, 16);
             groupBox1.Margin = new Padding(3, 4, 3, 4);
             groupBox1.Name = "groupBox1";
@@ -193,41 +220,14 @@
             lblNum.TabIndex = 40;
             lblNum.Text = "Digite o numero que deseja adicionar:";
             // 
-            // txtComodo
+            // txtNum
             // 
-            txtComodo.CausesValidation = false;
-            txtComodo.Font = new Font("Segoe UI", 12F);
-            txtComodo.Location = new Point(122, 80);
-            txtComodo.Name = "txtComodo";
-            txtComodo.Size = new Size(183, 34);
-            txtComodo.TabIndex = 35;
-            // 
-            // txtPesquisa
-            // 
-            txtPesquisa.Location = new Point(173, 258);
-            txtPesquisa.Name = "txtPesquisa";
-            txtPesquisa.Size = new Size(150, 27);
-            txtPesquisa.TabIndex = 64;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 12F);
-            label3.Location = new Point(2, 254);
-            label3.Name = "label3";
-            label3.Size = new Size(169, 28);
-            label3.TabIndex = 41;
-            label3.Text = "Barra de pesquisa:";
-            // 
-            // btnPesquisar
-            // 
-            btnPesquisar.Location = new Point(311, 40);
-            btnPesquisar.Margin = new Padding(3, 4, 3, 4);
-            btnPesquisar.Name = "btnPesquisar";
-            btnPesquisar.Size = new Size(120, 59);
-            btnPesquisar.TabIndex = 62;
-            btnPesquisar.Text = "Pesquisar";
-            btnPesquisar.UseVisualStyleBackColor = true;
+            txtNum.CausesValidation = false;
+            txtNum.Font = new Font("Segoe UI", 12F);
+            txtNum.Location = new Point(122, 80);
+            txtNum.Name = "txtNum";
+            txtNum.Size = new Size(183, 34);
+            txtNum.TabIndex = 35;
             // 
             // FrmCubo
             // 
@@ -267,6 +267,6 @@
         private Button btnAdd;
         private GroupBox groupBox1;
         private Label lblNum;
-        private TextBox txtComodo;
+        private TextBox txtNum;
     }
 }

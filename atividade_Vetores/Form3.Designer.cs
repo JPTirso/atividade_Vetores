@@ -41,7 +41,7 @@
             btnAdd = new Button();
             groupBox1 = new GroupBox();
             lblNum = new Label();
-            txtComodo = new TextBox();
+            txtNum = new TextBox();
             groupBox4.SuspendLayout();
             groupBox3.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -70,6 +70,7 @@
             btnLimpar.TabIndex = 43;
             btnLimpar.Text = "Limpar";
             btnLimpar.UseVisualStyleBackColor = true;
+            btnLimpar.Click += btnLimpar_Click;
             // 
             // btnVoltar
             // 
@@ -80,6 +81,7 @@
             btnVoltar.TabIndex = 44;
             btnVoltar.Text = "Voltar";
             btnVoltar.UseVisualStyleBackColor = true;
+            btnVoltar.Click += btnVoltar_Click;
             // 
             // groupBox3
             // 
@@ -147,13 +149,14 @@
             // 
             // btnCalcular
             // 
-            btnCalcular.Location = new Point(163, 40);
+            btnCalcular.Location = new Point(163, 41);
             btnCalcular.Name = "btnCalcular";
             btnCalcular.Size = new Size(120, 59);
             btnCalcular.TabIndex = 61;
             btnCalcular.Text = "Calcular";
             btnCalcular.UseVisualStyleBackColor = true;
             btnCalcular.Visible = false;
+            btnCalcular.Click += btnCalcular_Click;
             // 
             // btnAdd
             // 
@@ -163,11 +166,12 @@
             btnAdd.TabIndex = 60;
             btnAdd.Text = "Adicionar";
             btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
             // 
             // groupBox1
             // 
             groupBox1.Controls.Add(lblNum);
-            groupBox1.Controls.Add(txtComodo);
+            groupBox1.Controls.Add(txtNum);
             groupBox1.Location = new Point(14, 16);
             groupBox1.Margin = new Padding(3, 4, 3, 4);
             groupBox1.Name = "groupBox1";
@@ -187,14 +191,14 @@
             lblNum.TabIndex = 40;
             lblNum.Text = "Digite o numero positivo que deseja adicionar:";
             // 
-            // txtComodo
+            // txtNum
             // 
-            txtComodo.CausesValidation = false;
-            txtComodo.Font = new Font("Segoe UI", 12F);
-            txtComodo.Location = new Point(122, 80);
-            txtComodo.Name = "txtComodo";
-            txtComodo.Size = new Size(183, 34);
-            txtComodo.TabIndex = 35;
+            txtNum.CausesValidation = false;
+            txtNum.Font = new Font("Segoe UI", 12F);
+            txtNum.Location = new Point(122, 80);
+            txtNum.Name = "txtNum";
+            txtNum.Size = new Size(183, 34);
+            txtNum.TabIndex = 35;
             // 
             // FrmTroca
             // 
@@ -231,6 +235,6 @@
         private Button btnAdd;
         private GroupBox groupBox1;
         private Label lblNum;
-        private TextBox txtComodo;
+        private TextBox txtNum;
     }
 }
