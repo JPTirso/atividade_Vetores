@@ -1,6 +1,6 @@
 ﻿namespace atividade_Vetores
 {
-    partial class Menu
+    partial class FrmMenu
     {
         /// <summary>
         ///  Required designer variable.
@@ -53,25 +53,26 @@
             vetoresToolStripMenuItem.Name = "vetoresToolStripMenuItem";
             vetoresToolStripMenuItem.Size = new Size(72, 24);
             vetoresToolStripMenuItem.Text = "Vetores";
+            vetoresToolStripMenuItem.Click += vetoresToolStripMenuItem_Click;
             // 
             // ex1ToolStripMenuItem
             // 
             ex1ToolStripMenuItem.Name = "ex1ToolStripMenuItem";
-            ex1ToolStripMenuItem.Size = new Size(224, 26);
+            ex1ToolStripMenuItem.Size = new Size(119, 26);
             ex1ToolStripMenuItem.Text = "Ex 1";
             ex1ToolStripMenuItem.Click += ex1ToolStripMenuItem_Click;
             // 
             // ex2ToolStripMenuItem
             // 
             ex2ToolStripMenuItem.Name = "ex2ToolStripMenuItem";
-            ex2ToolStripMenuItem.Size = new Size(224, 26);
+            ex2ToolStripMenuItem.Size = new Size(119, 26);
             ex2ToolStripMenuItem.Text = "Ex 2";
             ex2ToolStripMenuItem.Click += ex2ToolStripMenuItem_Click;
             // 
             // ex3ToolStripMenuItem
             // 
             ex3ToolStripMenuItem.Name = "ex3ToolStripMenuItem";
-            ex3ToolStripMenuItem.Size = new Size(224, 26);
+            ex3ToolStripMenuItem.Size = new Size(119, 26);
             ex3ToolStripMenuItem.Text = "Ex 3";
             ex3ToolStripMenuItem.Click += ex3ToolStripMenuItem_Click;
             // 
@@ -82,14 +83,14 @@
             sairToolStripMenuItem.Text = "Sair";
             sairToolStripMenuItem.Click += sairToolStripMenuItem_Click;
             // 
-            // Menu
+            // FrmMenu
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(MtsMenu);
             MainMenuStrip = MtsMenu;
-            Name = "Menu";
+            Name = "FrmMenu";
             Text = "Form1";
             MtsMenu.ResumeLayout(false);
             MtsMenu.PerformLayout();

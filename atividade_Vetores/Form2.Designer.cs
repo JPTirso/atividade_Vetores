@@ -32,16 +32,16 @@
             btnLimpar = new Button();
             btnVoltar = new Button();
             groupBox3 = new GroupBox();
+            lstMatrizB = new ListBox();
+            lstMatrizA = new ListBox();
+            label1 = new Label();
+            label2 = new Label();
             groupBox2 = new GroupBox();
-            groupBox1 = new GroupBox();
-            lblNum = new Label();
-            txtComodo = new TextBox();
             btnCalcular = new Button();
             btnAdd = new Button();
-            label2 = new Label();
-            label1 = new Label();
-            lstMatrizA = new ListBox();
-            lstMatrizB = new ListBox();
+            groupBox1 = new GroupBox();
+            lblNum = new Label();
+            txtNum = new TextBox();
             groupBox4.SuspendLayout();
             groupBox3.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -70,6 +70,7 @@
             btnLimpar.TabIndex = 43;
             btnLimpar.Text = "Limpar";
             btnLimpar.UseVisualStyleBackColor = true;
+            btnLimpar.Click += btnLimpar_Click;
             // 
             // btnVoltar
             // 
@@ -80,6 +81,7 @@
             btnVoltar.TabIndex = 44;
             btnVoltar.Text = "Voltar";
             btnVoltar.UseVisualStyleBackColor = true;
+            btnVoltar.Click += btnVoltar_Click;
             // 
             // groupBox3
             // 
@@ -96,6 +98,42 @@
             groupBox3.TabStop = false;
             groupBox3.Text = "Áreas";
             // 
+            // lstMatrizB
+            // 
+            lstMatrizB.FormattingEnabled = true;
+            lstMatrizB.Location = new Point(173, 80);
+            lstMatrizB.Name = "lstMatrizB";
+            lstMatrizB.Size = new Size(150, 184);
+            lstMatrizB.TabIndex = 60;
+            // 
+            // lstMatrizA
+            // 
+            lstMatrizA.FormattingEnabled = true;
+            lstMatrizA.Location = new Point(7, 80);
+            lstMatrizA.Name = "lstMatrizA";
+            lstMatrizA.Size = new Size(150, 184);
+            lstMatrizA.TabIndex = 60;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 12F);
+            label1.Location = new Point(41, 49);
+            label1.Name = "label1";
+            label1.Size = new Size(86, 28);
+            label1.TabIndex = 52;
+            label1.Text = "Matriz A";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 12F);
+            label2.Location = new Point(199, 49);
+            label2.Name = "label2";
+            label2.Size = new Size(84, 28);
+            label2.TabIndex = 51;
+            label2.Text = "Matriz B";
+            // 
             // groupBox2
             // 
             groupBox2.Controls.Add(btnCalcular);
@@ -109,10 +147,31 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Botões Calcular";
             // 
+            // btnCalcular
+            // 
+            btnCalcular.Location = new Point(163, 42);
+            btnCalcular.Name = "btnCalcular";
+            btnCalcular.Size = new Size(120, 59);
+            btnCalcular.TabIndex = 61;
+            btnCalcular.Text = "Calcular";
+            btnCalcular.UseVisualStyleBackColor = true;
+            btnCalcular.Visible = false;
+            btnCalcular.Click += btnCalcular_Click;
+            // 
+            // btnAdd
+            // 
+            btnAdd.Location = new Point(163, 40);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(120, 59);
+            btnAdd.TabIndex = 60;
+            btnAdd.Text = "Adicionar";
+            btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
+            // 
             // groupBox1
             // 
             groupBox1.Controls.Add(lblNum);
-            groupBox1.Controls.Add(txtComodo);
+            groupBox1.Controls.Add(txtNum);
             groupBox1.Location = new Point(14, 16);
             groupBox1.Margin = new Padding(3, 4, 3, 4);
             groupBox1.Name = "groupBox1";
@@ -132,69 +191,14 @@
             lblNum.TabIndex = 40;
             lblNum.Text = "Digite o numero que deseja adicionar:";
             // 
-            // txtComodo
+            // txtNum
             // 
-            txtComodo.CausesValidation = false;
-            txtComodo.Font = new Font("Segoe UI", 12F);
-            txtComodo.Location = new Point(122, 80);
-            txtComodo.Name = "txtComodo";
-            txtComodo.Size = new Size(183, 34);
-            txtComodo.TabIndex = 35;
-            // 
-            // btnCalcular
-            // 
-            btnCalcular.Location = new Point(163, 40);
-            btnCalcular.Name = "btnCalcular";
-            btnCalcular.Size = new Size(120, 59);
-            btnCalcular.TabIndex = 61;
-            btnCalcular.Text = "Calcular";
-            btnCalcular.UseVisualStyleBackColor = true;
-            btnCalcular.Visible = false;
-            // 
-            // btnAdd
-            // 
-            btnAdd.Location = new Point(163, 40);
-            btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(120, 59);
-            btnAdd.TabIndex = 60;
-            btnAdd.Text = "Adicionar";
-            btnAdd.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 12F);
-            label2.Location = new Point(199, 49);
-            label2.Name = "label2";
-            label2.Size = new Size(84, 28);
-            label2.TabIndex = 51;
-            label2.Text = "Matriz B";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 12F);
-            label1.Location = new Point(41, 49);
-            label1.Name = "label1";
-            label1.Size = new Size(86, 28);
-            label1.TabIndex = 52;
-            label1.Text = "Matriz A";
-            // 
-            // lstMatrizA
-            // 
-            lstMatrizA.FormattingEnabled = true;
-            lstMatrizA.Location = new Point(7, 80);
-            lstMatrizA.Name = "lstMatrizA";
-            lstMatrizA.Size = new Size(150, 184);
-            lstMatrizA.TabIndex = 60;
-            // 
-            // lstMatrizB
-            // 
-            lstMatrizB.FormattingEnabled = true;
-            lstMatrizB.Location = new Point(173, 80);
-            lstMatrizB.Name = "lstMatrizB";
-            lstMatrizB.Size = new Size(150, 184);
-            lstMatrizB.TabIndex = 60;
+            txtNum.CausesValidation = false;
+            txtNum.Font = new Font("Segoe UI", 12F);
+            txtNum.Location = new Point(122, 80);
+            txtNum.Name = "txtNum";
+            txtNum.Size = new Size(183, 34);
+            txtNum.TabIndex = 35;
             // 
             // FrmQuadrado
             // 
@@ -227,7 +231,7 @@
         private Button btnAdd;
         private GroupBox groupBox1;
         private Label lblNum;
-        private TextBox txtComodo;
+        private TextBox txtNum;
         private ListBox lstMatrizB;
         private ListBox lstMatrizA;
         private Label label1;

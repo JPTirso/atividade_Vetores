@@ -1,8 +1,8 @@
 namespace atividade_Vetores
 {
-    public partial class Menu : Form
+    public partial class FrmMenu : Form
     {
-        public Menu()
+        public FrmMenu()
         {
             InitializeComponent();
         }
@@ -31,6 +31,11 @@ namespace atividade_Vetores
             Hide();
             FrmCubo cubo = new FrmCubo();
             cubo.Show();
+        }
+
+        private void vetoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
