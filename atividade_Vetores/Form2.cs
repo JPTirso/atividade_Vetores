@@ -39,7 +39,6 @@ namespace atividade_Vetores
                     lstMatrizA.Items.Add(Num[i]);
                     i++;
                     txtNum.Clear();
-                    txtNum.Focus();
                     lblContagem.Text = "Matriz cheia";
                     btnAdd.Hide();
                     btnExemplo.Hide();
